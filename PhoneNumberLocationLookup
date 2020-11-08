@@ -1,0 +1,26 @@
+import phonenumbers
+from phonenumbers import carrier
+from phonenumbers import geocoder
+from tabulate import tabulate 
+
+def numberCheck(phonenumber):
+    number = phonenumbers.parse(phonenumber)
+    description = geocoder.description_for_number(number,"en")
+    supplier = carrier.name_for_number(number,"en")
+    info =[["State","Supplier"],
+            [description,supplier]]
+    return tabulate(info,headers = "firstrow",tablefmt = "github")
+
+if __name__ == "__main__":
+    print("\nMake sure number is properly formatted before entering.\n\nEx: +1 917 589 6498")
+
+    Continue = "y"
+
+    while Continue == "y": 
+        try:
+            number = input("\nEnter number: ")
+            print(numberCheck(number))
+        except:
+            print("Incorrect number format.")
+    
+        Continue = input("Would you like to enter another number ? (Enter 'y' to continue. Enter any other character to exit. ): ")
