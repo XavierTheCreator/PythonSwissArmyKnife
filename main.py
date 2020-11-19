@@ -14,11 +14,11 @@ layout = [[sg.Text('URL', size=(15,1)),sg.InputText()],
 # Create the window
 window = sg.Window('Youtube Downloader', layout)
 
-# Display and interact with the Window using an Event Loop
+#Event Loop
 while True:
     event, values = window.read()
    
-    # See if user wants to quit or window was closed
+    # Waiting for quit press
     if event == sg.WINDOW_CLOSED or event == 'Quit':
         break
     
