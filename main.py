@@ -1,5 +1,9 @@
 """
 Youtube downloader version 0.01
+
+This project is getting moved to it's own respository as I its going to get larger
+and I would like to keep things organized .
+
 """
 
 from pytube import YouTube
