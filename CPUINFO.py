@@ -1,7 +1,5 @@
 import psutil 
 
-#Checks for number of cores 
-
 print('Physical Cores: ',psutil.cpu_count(logical=False))
 print('Total Cores: ', psutil.cpu_count(logical=True))
 
